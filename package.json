@@ -1,0 +1,20 @@
+{
+  "name": "cordova-plugin-itos",
+  "version": "0.0.2",
+  "description": "Cordova Itos Plugin",
+  "cordova": {
+    "id": "cordova-plugin-itos",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "itos",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}
