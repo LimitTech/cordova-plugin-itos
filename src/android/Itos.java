@@ -52,30 +52,13 @@ public class Itos extends CordovaPlugin {
     private void print() {
         Log.e(LOG_TAG, "print");
 
-        String textToPrint;
-        int fontSize;
-        int align;
+        String textToPrint = this.args.optString(0, "");
+        int fontSize = this.args.optInt(1, FONT_SIZE_NORMAL);
+        int align = this.args.optInt(2, 0);
+        boolean bold = this.args.optBoolean(3, false);
+
         Align textAlign;
-        boolean bold;
-
-        try {
-          textToPrint = this.args.getString(0);
-        }
-        catch(JSONException e) {
-           textToPrint = "";
-        }
-
-        try {
-          fontSize = this.args.getInt(1);
-        }
-        catch(JSONException e) {
-          fontSize = FONT_SIZE_NORMAL;
-        }
-
-        try {
-          align = this.args.getInt(2);
-
-          switch(align) {
+        switch(align) {
             case 0:
                 textAlign = Align.LEFT;
                 break;
@@ -87,18 +70,6 @@ public class Itos extends CordovaPlugin {
                 break;
             default:
                 textAlign = Align.LEFT;
-          }
-
-        }
-        catch(JSONException e) {
-          textAlign = Align.LEFT;
-        }
-
-        try {
-          bold = this.args.getBoolean(3);
-        }
-        catch(JSONException e) {
-          bold = false;
         }
 
 //         cordova.getThreadPool().execute(new Runnable() {
