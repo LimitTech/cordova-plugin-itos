@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-itos" version="0.0.2">
-    <name>iots</name>
+    <name>Itos</name>
     <description>Cordova Itos SDK</description>
     <license>Apache 2.0</license>
     <keywords>cordova,itos</keywords>
@@ -11,8 +11,8 @@
 
     <platform name="android">
         <config-file target="config.xml" parent="/*">
-            <feature name="itos">
-                <param name="android-package" value="es.limit.cordova.itos"/>
+            <feature name="Itos">
+                <param name="android-package" value="es.limit.cordova.itos.Itos"/>
             </feature>
         </config-file>
 
@@ -22,8 +22,8 @@
             <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
         </config-file>
 
-        <source-file src="src/android/Itos.java"
-                     target-dir="src/android/Itos"/>
-        <source-file src="lib/SDKItosDeviceLink.aar" target-dir="libs"/>
+        <framework src="src/android/itos.gradle" custom="true" type="gradleReference"/>
+        <source-file src="src/android/Itos.java" target-dir="src/android/Itos"/>
+        <resource-file src="lib/SDKItosDeviceLink.aar" target="libs/SDKItosDeviceLink.aar"/>
     </platform>
 </plugin>
